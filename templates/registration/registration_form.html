@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load bootstrap %}
+{% block title %}{% trans "Kick your tasks ass" %}{% endblock %}
+
+{% block content %}
+
+<!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="container">
+      <div class="span6">
+        <form role="form" method="post" action=".">
+            <legend>{% trans "Register" %}</legend>
+            {% csrf_token %}
+            {{ form|bootstrap }}
+            
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <input type="submit" class="btn btn-success" value="{% trans 'Register' %}" />
+              <!--<a href="#back" class="btn">Go back</a>-->
+            </div>
+        </form>
+        </div>
+    </div> <!-- /container -->
+{% endblock %}

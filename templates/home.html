@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}{% trans "Kick your tasks ass" %}{% endblock %}
+
+{% block content %}
+
+<!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1>{% trans "Kick your ass" %}</h1>
+        <p>{% trans "Don't just do your task, make them eat dust!" %}</p>
+        <p><a class="btn btn-primary btn-lg" role="button">{% trans "Learn more" %} &raquo;</a></p>
+      </div>
+    </div>
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+            <blockquote>
+            ““In Aikido training, we learn from everyone. We learn from the most experience people, but we also learn from new students. Everyone is connected through the heart and develops a mutual understanding. It is important to create a place where that can happen.” 
+            <small>    ― Linda Holiday, Journey to the Heart of Aikido: The Teachings of Motomichi Anno Sensei</small>
+            </blockquote>
+        </div>
+        <div class="col-md-4">
+            <blockquote>
+            ““Η δυνατή γροθιά κατά την γνώμη μου, δεν είναι αυτή που θα πετάξει τον αντίπαλο τρία μέτρα μακριά, δυνατά γροθιά είναι εκείνη που οταν την δώσεις θα φύγεις πίσω και εσύ ο ίδιος.” 
+            <small>    ― Γιώργος Μ.</small>
+            </blockquote>
+        </div>
+        <div class="col-md-4">
+            <blockquote>
+                For me, the martial arts is a search for something inside. It's not just a physical discipline.
+                <small>   ― Brandon Lee </small>
+            </blockquote>
+        </div>
+      </div><p>
+    </div> <!-- /container -->
+{% endblock %}

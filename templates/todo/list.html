@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}{% trans "Kick your tasks ass" %}{% endblock %}
+
+{% block content %}
+
+<!-- Main jumbotron for a primary marketing message or call to action -->
+   <div id="todoapp" class="container">
+        <h1>To Kick List of {{ user }}</h1>
+        <section id="todo-add">
+            <form class="well">
+            <div class="form-group span8">
+                    <input id="new-todo" class="form-control" type="text" 
+                        placeholder="What needs some knocking down?">
+            </div>
+            <div class="form-group span8">
+                    <input id="new-todo-description" class="form-control" type="text" 
+                        placeholder="Anything else to remember?">
+            </div>
+            <div class="form-group input-append date" data-date="" data-date-format="dd-mm-yyyy">
+                    <input placeholder="Date" class="form-control" id="new-todo-date" size="16" type="text" value="">
+            </div>
+            <div id="submit-new-todo" class="form-group">
+                    <button type="button" class="btn btn-info "><span class="glyphicon glyphicon-plus"/></button>
+            </div>
+            </form>
+        </section>
+        <section class="form-horizontal" id="main">
+            <a href="#" class="btn btn-default" id="newer-todo">{% trans 'new first' %}</a> / <a class="btn btn-default" href="#" id="older-todo">{% trans 'older first' %}</a>
+            <select id="filter-todo" class="form-control">
+                <option>all</option>
+                <option>old</option>
+                <option>pending</option>
+                <option>completed</option>
+            </select>
+         </section>
+
+      <div class="table-responsive">
+          <table id="todo-list" class="table">
+          </table>
+      </div>
+
+   </div> <!-- /container -->
+{% endblock %}
+
+{% block js %}
+    <script id="item-template" type="text/x-underscore-template">
+        <th><input class="check-done" title="Mark as completed" type="checkbox"></th>
+        <th><a href="#" class="task-title" data-type="text" data-title="Enter title"><%= title %></a> </th>
+        <th><a href="#" class="task-description" data-type="textarea" data-title=""><%= description %></a></th>
+        <th><a href="#" class="task-date" data-type="combodate" data-title="Date"><%= moment(date).format('MM/DD/YYYY') %></a></th>
+    </script>
+    <script id="table-template" type="text/x-underscore-template">
+              <thead> <tr>
+                    <th><input id="toggle-all" title="Mark all as completed" type="checkbox"></th>
+                    <th>{% trans "Title" %}</th>
+                    <th>{% trans "Description" %}</th>
+                    <th>{% trans "Date" %}</th>
+              </tr></thead>
+    </script>
+    <script id="quote-template" type="text/x-underscore-template">
+        <div id="quote-alert" class="alert alert-info alert-dismissable fade in">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                <div id="quote-display">
+                </div>
+        </div>
+    </script>
+
+    <script src="/static/js/underscore-min.js"></script>
+    <script src="/static/js/moment.min.js"></script>
+    <script src="/static/js/backbone-min.js"></script>
+    <script src="/static/js/bootstrap-datepicker.js"></script>
+    <script src="/static/js/bootstrap-editable.js"></script>
+    <script src="/static/js/todo.js"></script>
+    <script id="quotes" type="text">
+        <blockquote>
+        “The best fighter is never angry.”
+        <small>    ― Laozi</small>
+        </blockquote>
+        <blockquote>
+        “Use only that which works, and take it from any place you can find it.” 
+        <small>    ― Bruce Lee, Tao of Jeet Kune Do </small>
+        </blockquote>
+        <blockquote>
+        “Preoccupied with a single leaf you won't see the tree.” 
+        <small>    ― Vagabond</small>
+        </blockquote>
+        <blockquote>
+        ““You Have the Power to Fulfill Your Dreams!” 
+        <small>    ― Tae Yun Kim, Seven Steps to Inner Power</small>
+        </blockquote>
+        <blockquote>
+        ““Your anger is your First Enemy.” 
+        <small>    ― Mohamed Othman</small>
+        </blockquote>
+        <blockquote>
+        ““In Aikido training, we learn from everyone. We learn from the most experience people, but we also learn from new students. Everyone is connected through the heart and develops a mutual understanding. It is important to create a place where that can happen.” 
+        <small>    ― Linda Holiday, Journey to the Heart of Aikido: The Teachings of Motomichi Anno Sensei</small>
+        </blockquote>
+        <blockquote>
+        ““Η δυνατή γροθιά κατά την γνώμη μου, δεν είναι αυτή που θα πετάξει τον αντίπαλο τρία μέτρα μακριά, δυνατά γροθιά είναι εκείνη που οταν την δώσεις θα φύγεις πίσω και εσύ ο ίδιος.” 
+        <small>    ― Γιώργος Μ.</small>
+        </blockquote>
+    </script>
+{% endblock %}
+
+{% block css %}
+    <link href="/static/css/datepicker.css" rel="stylesheet">
+    <link href="/static/css/bootstrap-editable.css" rel="stylesheet">
+    <link href="/static/css/todo.css" rel="stylesheet">
+{% endblock %}

@@ -1,0 +1,37 @@
+/* Hide all rows but the correct ones */
+#todo-list thead tr {
+    display: table-row;
+}
+
+.todo-list-old tr {
+    display: none;
+}
+.todo-list-old tr.old {
+    display: table-row;
+}
+
+.todo-list-pending tr {
+    display: none;
+}
+.todo-list-pending tr.pending {
+    display: table-row;
+}
+
+.todo-list-completed tr {
+    display: none;
+}
+.todo-list-completed tr.done {
+    display: table-row;
+}
+
+/* Small date input */
+.form-group.input-append {
+    width: 10%;
+}
+
+#filter-todo {
+    width: 20%;
+    float: right;
+}
+
+
