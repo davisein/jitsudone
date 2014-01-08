@@ -13,8 +13,8 @@ dbindexer.autodiscover()
 urlpatterns = patterns(
     '',
     ('^_ah/warmup$', 'djangoappengine.views.warmup'),
-    #(r'^accounts/', include('registration.backends.default.urls')),
-    (r'^accounts/', include('registration.backends.simple.urls')),
+    (r'^accounts/', include('registration.backends.default.urls')),
+    #(r'^accounts/', include('registration.backends.simple.urls')),
     ('^$', 'django.views.generic.simple.direct_to_template', {'template': 'home.html'}),
     (r'^todo/', include('todo.urls')),
     ('^admin/', include(admin.site.urls)),
